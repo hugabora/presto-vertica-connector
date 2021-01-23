@@ -1,6 +1,6 @@
-package com.facebook.presto.plugin.vertica;
+package io.prestosql.plugin.vertica;
 
-import com.facebook.presto.plugin.jdbc.JdbcPlugin;
+import io.prestosql.plugin.jdbc.JdbcPlugin;
 
 public class VerticaPlugin extends JdbcPlugin {
 

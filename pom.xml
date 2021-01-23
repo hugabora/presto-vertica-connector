@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.facebook.presto</groupId>
+        <groupId>io.prestosql</groupId>
         <artifactId>presto-root</artifactId>
-        <version>0.208</version>
+        <version>316</version>
     </parent>
 
-    <groupId>com.facebook.presto</groupId>
+    <groupId>io.prestosql</groupId>
     <artifactId>presto-vertica-connector</artifactId>
     <packaging>jar</packaging>
 
@@ -30,14 +30,24 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.facebook.presto</groupId>
+            <groupId>io.prestosql</groupId>
             <artifactId>presto-base-jdbc</artifactId>
-            <version>${version}</version>
+            <version>316</version>
         </dependency>
         <dependency>
             <groupId>com.vertica.jdbc</groupId>
             <artifactId>vertica.jdbc</artifactId>
-            <version>9.1.1-0</version>
+            <version>9.3.1-0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.prestosql</groupId>
+	    <artifactId>presto-spi</artifactId>
+	    <version>316</version>
+        </dependency>
+        <dependency>
+            <groupId>io.prestosql</groupId>
+            <artifactId>presto-base-jdbc</artifactId>
+            <version>350</version>
         </dependency>
     </dependencies>
 
