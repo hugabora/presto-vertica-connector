@@ -1,17 +1,17 @@
-package io.prestosql.plugin.vertica;
+package io.trino.plugin.vertica;
 
 import com.google.common.collect.ImmutableSet;
-import io.prestosql.plugin.jdbc.*;
-import io.prestosql.spi.PrestoException;
-import io.prestosql.spi.connector.ConnectorSession;
-import io.prestosql.spi.type.Type;
+import io.trino.plugin.jdbc.*;
+import io.trino.spi.TrinoException;
+import io.trino.spi.connector.ConnectorSession;
+import io.trino.spi.type.Type;
 
 import javax.inject.Inject;
 import java.sql.*;
 import java.util.Collection;
 import java.util.Optional;
 
-import static io.prestosql.plugin.jdbc.JdbcErrorCode.JDBC_ERROR;
+import static io.trino.plugin.jdbc.JdbcErrorCode.JDBC_ERROR;
 import static java.util.Locale.ENGLISH;
 
 public class VerticaClient extends BaseJdbcClient {
@@ -33,7 +33,7 @@ public class VerticaClient extends BaseJdbcClient {
             }
             return schemaNames.build();
         } catch (SQLException e) {
-            throw new PrestoException(JDBC_ERROR, e.getMessage());
+            throw new TrinoException(JDBC_ERROR, e.getMessage());
         }
     }
 
@@ -61,7 +61,7 @@ public class VerticaClient extends BaseJdbcClient {
     }
 
     @Override
-    public Optional<ColumnMapping> toPrestoType(ConnectorSession session, Connection connection, JdbcTypeHandle typeHandle) {
+    public Optional<ColumnMapping> toTrinoType(ConnectorSession session, Connection connection, JdbcTypeHandle typeHandle) {
         // TODO implement proper type mapping
         return legacyToPrestoType(session, connection, typeHandle);
     }

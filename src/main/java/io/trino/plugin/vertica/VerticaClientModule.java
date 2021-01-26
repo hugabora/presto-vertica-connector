@@ -1,10 +1,10 @@
-package io.prestosql.plugin.vertica;
+package io.trino.plugin.vertica;
 
 import com.google.inject.Module;
 import com.google.inject.*;
 import com.vertica.jdbc.Driver;
-import io.prestosql.plugin.jdbc.*;
-import io.prestosql.plugin.jdbc.credential.CredentialProvider;
+import io.trino.plugin.jdbc.*;
+import io.trino.plugin.jdbc.credential.CredentialProvider;
 
 import java.sql.SQLException;
 import java.util.Properties;

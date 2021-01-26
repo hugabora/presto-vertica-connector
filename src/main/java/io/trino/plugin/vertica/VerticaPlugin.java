@@ -1,6 +1,6 @@
-package io.prestosql.plugin.vertica;
+package io.trino.plugin.vertica;
 
-import io.prestosql.plugin.jdbc.JdbcPlugin;
+import io.trino.plugin.jdbc.JdbcPlugin;
 
 public class VerticaPlugin extends JdbcPlugin {
 

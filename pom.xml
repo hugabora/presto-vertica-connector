@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>io.prestosql</groupId>
-        <artifactId>presto-root</artifactId>
-        <version>316</version>
+        <groupId>io.trino</groupId>
+        <artifactId>trino-root</artifactId>
+        <version>351</version>
     </parent>
 
-    <groupId>io.prestosql</groupId>
-    <artifactId>presto-vertica-connector</artifactId>
+    <groupId>io.trino</groupId>
+    <artifactId>trino-vertica-connector</artifactId>
     <packaging>jar</packaging>
 
     <name>presto-vertica-${project.version}</name>
@@ -21,6 +20,9 @@
         <developer>
             <name>alexsumin</name>
         </developer>
+        <developer>
+            <name>adelcast</name>
+        </developer>
     </developers>
 
     <properties>
@@ -28,26 +30,22 @@
         <air.check.skip-all>true</air.check.skip-all>
     </properties>
 
+
     <dependencies>
         <dependency>
-            <groupId>io.prestosql</groupId>
-            <artifactId>presto-base-jdbc</artifactId>
-            <version>316</version>
-        </dependency>
-        <dependency>
             <groupId>com.vertica.jdbc</groupId>
-            <artifactId>vertica.jdbc</artifactId>
-            <version>9.3.1-0</version>
+            <artifactId>vertica-jdbc</artifactId>
+            <version>10.0.1-0</version>
         </dependency>
         <dependency>
-            <groupId>io.prestosql</groupId>
-	    <artifactId>presto-spi</artifactId>
-	    <version>316</version>
+            <groupId>io.trino</groupId>
+            <artifactId>trino-spi</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.prestosql</groupId>
-            <artifactId>presto-base-jdbc</artifactId>
-            <version>350</version>
+            <groupId>io.trino</groupId>
+            <artifactId>trino-base-jdbc</artifactId>
+            <version>${version}</version>
         </dependency>
     </dependencies>
 
